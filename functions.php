@@ -24,4 +24,8 @@ function retriever($con){
         return $user_data;
     }
 }
-
+function transcation($con, $customer_fullname){
+    $username = $_SESSION['user_name'];
+    $query = "select * from p_transaction,customer where user_name = '$username' and customer_depositedFrom = '$customer_fullname'";
+    return mysqli_query($con, $query);
+}
