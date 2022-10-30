@@ -83,7 +83,7 @@ nav .fa{
     color: #0f0c29;
     border: none;
     border-radius: 10px;
-    width: 750px;
+    width: 50em;
     height: 40%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -103,6 +103,9 @@ nav .fa{
 }
 .form form label{
     padding: 1rem;
+}
+.balance{
+
 }
 .form form .submit{
     width: 20%;
@@ -151,5 +154,38 @@ nav .fa{
 .card:hover{
     transform: scale(1.1);
     transition-duration: 0.7s;
+}
+
+
+
+
+
+@media (max-width: 898px){
+    .form{
+        width: 90%;
+        }
+    .form form .submit{
+        width: 50%;
+
+    }
+    .form form{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 5rem 0;
+        height: 100%;
+        margin: 0 auto;
+    }
+    .form form input[name="amount"]{
+        width: 100px;
+        font-size: large;
+        border-radius: 5px;
+        border:1px solid rgba(0,0,0,20.9%);
+        padding: 5px 2px;
+    }
+    .form form input[name="name"]{
+        display: block;
+        margin-top: 1em;
+    }
 }
 
