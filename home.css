@@ -25,6 +25,9 @@ body{
     z-index: 3;
     width: 100%;
 }
+.icons{
+    cursor: pointer;
+}
 .nav{
     display: flex;
     padding: 0 6%;
@@ -62,6 +65,7 @@ body{
 nav .fa{
     display: none;
 }
+
 .logo{
     color: whitesmoke;
     font-family: "Open Sans", sans-serif;
@@ -70,16 +74,17 @@ nav .fa{
     padding: 0 6%;
 }
 .username{
-    margin: 10vh 10vw;
+    margin: 10vh auto;
+    width: 300px;
     color: whitesmoke;
     font-size: larger;
 }
 .main{
-    width: 80%;
+    width: 50em;
     margin: 10vh auto;
     /*background: darkgray;*/
-    background: gray;
-    color: #0f0c29;
+    background: transparent;
+    color: whitesmoke;
     display: flex;
     justify-content: space-between;
     border-radius: 20px;
@@ -88,6 +93,7 @@ nav .fa{
 }
 .main-right{
     border-radius: 20px;
+    padding-right: 2em;
 
 }
 .main-right .frame {
@@ -106,8 +112,8 @@ nav .fa{
 
 }
 .main-right .frame img{
-    width: 50%;
-    height: 70%;
+    width: 55%;
+    height: 80%;
     border-radius: 20px;
 
 }
@@ -116,14 +122,17 @@ nav .fa{
     flex-direction: column;
     justify-content: center;
     align-content: space-evenly;
-    row-gap: 7px;
-    padding-left: 10px;
+    row-gap: 0.15em;
+    padding-left: 2em;
 }
 .main-left p{
     font-family: "Open Sans", "Sans Serif Collection", sans-serif;
+    border-bottom: 2px rgba(255,255,255, 10%) solid;
+    margin: 0.2em 0;
 }
 .main-left span, .main-right span{
-    font-weight: bold;
+    color: lightgreen;
+    ;
     font-family: Rubik, "Open Sans", "Sans Serif Collection", sans-serif;
     font-size: larger;
 }
@@ -150,4 +159,17 @@ nav .fa{
 }
 .username .color{
     color: lightgreen;
+}
+
+@media (max-width: 898px) {
+    .main {
+        width: 80%;
+        /*background: darkgray;*/
+        flex-direction: column-reverse;
+    }
+    .cards{
+        padding-bottom: 10em;
+    }
+
+
 }
