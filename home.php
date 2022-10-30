@@ -53,13 +53,13 @@ session_start();
         </div>
         <div class="cards">
             <div class="card">
-                <a href="https://nbe.gov.et/inter-bank-daily-foreign-exchange-rate-in-usd/" target="_blank"><img src="world-currency-rates-483658563-09879331c7a94e639775474879c61cf0.jpg" alt="currency"></a>
+                <a href="https://nbe.gov.et/inter-bank-daily-foreign-exchange-rate-in-usd/" target="_blank"><img src="world-currency-rates-483658563-09879331c7a94e639775474879c61cf0.png" alt="currency"></a>
             </div>
             <div class="card">
-                <a href="https://www.marketwatch.com/" target="_blank"><img src="CollinCamerer-ShortSelling-0.2e16d0ba.fill-1600x810-c100.jpg" alt="stock market"></a>
+                <a href="https://www.marketwatch.com/" target="_blank"><img src="CollinCamerer-ShortSelling-0.2e16d0ba.fill-1600x810-c100.png" alt="stock market"></a>
             </div>
             <div class="card">
-                <a href="" target="_blank"></a><img src="20200120-invest.webp" alt="savings">
+                <a href="" target="_blank"></a><img src="Why-do-you-need-savings-and-investment-plans.png" alt="savings">
             </div>
         </div>
     </div>
