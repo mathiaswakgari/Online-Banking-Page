@@ -29,3 +29,8 @@ function transcation($con, $customer_fullname){
     $query = "select * from p_transaction,customer where user_name = '$username' and customer_depositedFrom = '$customer_fullname'";
     return mysqli_query($con, $query);
 }
+function accountReader($name, $con){
+    $query = "select * from customer where customer_fullname ='$name'";
+    $result = mysqli_query($con, $query);
+    return mysqli_fetch_assoc($result);
+}
