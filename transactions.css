@@ -70,12 +70,12 @@ nav .fa{
     padding: 0 6%;
 }
 .table{
-    width: 55%;
+    width: 500px;
     margin: 10vh auto;
     /*background: darkgray;*/
-    background: whitesmoke;
+    background: transparent;
 
-    color: #0f0c29;
+    color: whitesmoke;
     display: flex;
     justify-content: space-between;
     border: 0;
@@ -101,21 +101,20 @@ table{
     border-spacing: 0;
 }
 table, th, td {
-
     padding: 10px 15px ;
 }
 table td{
-    border: 1px solid rgba(0,25,255,10%);
+    border: 1px solid rgba(255,255,245,10%);
 }
 .table .data{
     text-align: center;
 }
 table th{
     border: 0;
-    background: green;
+    background: #393939;
 }
 tr:nth-child(odd){
-    background: lightgray;
+
 }
 .cards{
     display: flex;
