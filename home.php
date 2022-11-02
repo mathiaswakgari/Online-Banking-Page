@@ -13,25 +13,25 @@ session_start();
     <meta charset="UTF-8">
     <title>Home</title>
     <link href="http://localhost/onlinebanking/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
-        <div class="header">
+        <header>
             <p class="logo">Anonymous Bank</p>
             <nav class="nav">
                 <div class="nav-links" id="nav-links">
-                    <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul class="menu">
                         <li><a href="">Home</a></li>
                         <li><a href="transactions.php">Transactions</a></li>
-                        <li><a href="">Make Payment</a></li>
+                        <li><a href="payment.php">Make Payment</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
-                <i class="fa fa-bars" onclick="showMenu()"></i>
             </nav>
-        </div>
+        </header>
         <p class="username">Welcome, <span class="color"> <?php echo $user_login_data['user_name']?></span>.</p>
         <div class="main">
             <div class="main-left">
@@ -43,8 +43,8 @@ session_start();
             </div>
             <div class="main-right">
                 <div class="frame">
-                    <img src="3x4.jpg" alt="customer profile picture">
-                    <p><span class="sp">Balance: $</span><?php echo $customer_data['balance']?></p>
+                    <?php echo '<img src="data:image;base64,'.base64_encode(imageLoader($con)['customer_image']).'" alt="profile-picture">'; ?>
+                    <p><span class="sp">Balance: </span>$<?php echo number_format($customer_data['balance'])?></p>
                 </div>
             </div>
 
@@ -64,6 +64,12 @@ session_start();
         </div>
     </div>
 
+<script>
+    let navbar = document.querySelector('.nav');
+    document.querySelector('#menu-btn').onclick = ()=>{
+        navbar.classList.toggle('active')
 
+    }
+</script>
 </body>
 </html>
