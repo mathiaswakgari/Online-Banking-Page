@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <link href="index.css" rel="stylesheet">
+    <link href="http://localhost/onlinebanking/index.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,7 +14,6 @@
 
 <div class="login-container">
     <form action="login.php" method="post">
-        <h1>Login</h1>
         <label>Username <i class="fa-solid fa-user"></i><input type="text" placeholder="Type your username" class="input" name="username"></label>
         <label>Password
             <i class="fa-solid fa-lock"></i><input type="password" placeholder="Type your password" class="input" name="password"></label>
