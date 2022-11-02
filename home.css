@@ -17,13 +17,14 @@ body{
     width: 100%;
 
 }
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     z-index: 3;
     width: 100%;
+    
 }
 .icons{
     cursor: pointer;
@@ -93,7 +94,7 @@ nav .fa{
 }
 .main-right{
     border-radius: 20px;
-    padding-right: 2em;
+    padding-right: 0;
 
 }
 .main-right .frame {
@@ -123,7 +124,7 @@ nav .fa{
     justify-content: center;
     align-content: space-evenly;
     row-gap: 0.15em;
-    padding-left: 2em;
+    padding-left: 4em;
 }
 .main-left p{
     font-family: "Open Sans", "Sans Serif Collection", sans-serif;
@@ -163,12 +164,17 @@ nav .fa{
 
 @media (max-width: 898px) {
     .main {
-        width: 80%;
+        width: 90%;
         /*background: darkgray;*/
         flex-direction: column-reverse;
+        padding-bottom: 1em;
+        align-items: center;
     }
     .cards{
         padding-bottom: 10em;
+    }
+    .main-left{
+        padding-left: 0;
     }
 
 
