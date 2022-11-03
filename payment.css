@@ -17,19 +17,34 @@ body{
     width: 100%;
 
 }
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     z-index: 3;
     width: 100%;
+    border-bottom: 1px lightgreen solid;
+
+}
+.icons #menu-btn{
+    display: none;
+}
+.icons #menu-btn:hover{
+    color: lightgreen;
+    transition-duration: 0.21s;
+}
+.icons{
+    cursor: pointer;
 }
 .nav{
     display: flex;
     padding: 0 6%;
     justify-content: space-between;
     align-items: center;
+}
+.nav.active{
+    right: 0;
 }
 .nav-links{
     flex: 1;
@@ -70,6 +85,13 @@ nav .fa{
     font-size: 22px;
     padding: 0 6%;
 }
+.logo a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.logo a:hover{
+    color: lightgreen;
+}
 .title{
     text-align: center;
     margin-top: 50px;
@@ -79,12 +101,12 @@ nav .fa{
 }
 .form{
     margin: 10vh auto;
-    background:#d9d9d9 ;
-    color: #0f0c29;
+    background:transparent ;
+    color: whitesmoke;
     border: none;
     border-radius: 10px;
     width: 50em;
-    height: 40%;
+    height: 50%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .form p{
@@ -178,14 +200,34 @@ nav .fa{
     }
     .form form input[name="amount"]{
         width: 100px;
+        margin-top: 1em;
         font-size: large;
         border-radius: 5px;
         border:1px solid rgba(0,0,0,20.9%);
         padding: 5px 2px;
+        display: block;
     }
     .form form input[name="name"]{
         display: block;
         margin-top: 1em;
+    }
+    .icons #menu-btn{
+        display: inline-block;
+        padding-right: 1em;
+    }
+    header .nav{
+        position: absolute;
+        top: 6.2%;
+        height: calc(100vh);
+        right: -100%;
+        background: linear-gradient(30deg, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        align-items: flex-start;
+
+    }
+    header .nav .nav-links .menu li {
+        display: block;
+        margin: 1.5rem;
     }
 }
 
