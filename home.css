@@ -24,7 +24,16 @@ header {
     height: 60px;
     z-index: 3;
     width: 100%;
-    
+    border-bottom: 1px lightgreen solid;
+    position: fixed;
+
+}
+.icons #menu-btn{
+    display: none;
+}
+.icons #menu-btn:hover{
+    color: lightgreen;
+    transition-duration: 0.21s;
 }
 .icons{
     cursor: pointer;
@@ -34,6 +43,9 @@ header {
     padding: 0 6%;
     justify-content: space-between;
     align-items: center;
+}
+.nav.active{
+    right: 0;
 }
 .nav-links{
     flex: 1;
@@ -73,6 +85,13 @@ nav .fa{
     font-weight: bold;
     font-size: 22px;
     padding: 0 6%;
+}
+.logo a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.logo a:hover{
+    color: lightgreen;
 }
 .username{
     margin: 10vh auto;
@@ -176,6 +195,25 @@ nav .fa{
     .main-left{
         padding-left: 0;
     }
+    .icons #menu-btn{
+        display: inline-block;
+        padding-right: 1em;
+    }
+    header .nav{
+        position: absolute;
+        top: 6.2%;
+        height: calc(100vh);
+        right: -100%;
+        background: linear-gradient(30deg, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+        align-items: flex-start;
+
+    }
+    header .nav .nav-links .menu li {
+        display: block;
+        margin: 1.5rem;
+    }
+
 
 
 }
