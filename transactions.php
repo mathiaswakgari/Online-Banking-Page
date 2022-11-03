@@ -15,25 +15,28 @@ $transaction_data = transcation($con,$customer_fullname );
     <meta charset="UTF-8">
     <title>Transactions</title>
     <link rel="stylesheet" href="http://localhost/onlinebanking/transactions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 </head>
 <body>
 <div class="container">
-    <div class="header">
-        <p class="logo">Anonymous Bank</p>
+    <header>
+        <p class="logo"><a href="home.php">Anonymous Bank</a></p>
         <nav class="nav">
             <div class="nav-links" id="nav-links">
-                <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul class="menu">
                     <li><a href="home.php">Home</a></li>
                     <li><a href="transactions.php">Transactions</a></li>
-                    <li><a href="">Make Payment</a></li>
+                    <li><a href="payment.php">Make Payment</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </div>
-            <i class="fa fa-bars" onclick="showMenu()"></i>
         </nav>
-    </div>
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
     <h2 class="title">Transaction <span class="color">History</span></h2>
     <div class="table">
         <table>
@@ -68,6 +71,12 @@ $transaction_data = transcation($con,$customer_fullname );
         </div>
     </div>
 </div>
+<script>
+    let navbar = document.querySelector('.nav');
+    document.querySelector('#menu-btn').onclick = ()=>{
+        navbar.classList.toggle('active')
 
+    }
+</script>
 </body>
 </html>
