@@ -1,219 +1,78 @@
-*{
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-body{
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+<?php
+session_start();
+    include("functions.php");
+    include("connection.php");
 
-    color: whitesmoke;
-    display: flex;
-}
-.container{
+    $user_login_data = check_login($con);
+    $customer_data = retriever($con);
+?>
 
-    height: 100vh;
-    width: 100%;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="http://localhost/onlinebanking/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
-}
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    z-index: 3;
-    width: 100%;
-    border-bottom: 1px lightgreen solid;
-    position: fixed;
+</head>
+<body>
+    <div class="container">
+        <header>
+            <p class="logo"><a href="home.php">Anonymous Bank</a></p>
+            <nav class="nav">
+                <div class="nav-links" id="nav-links">
+                    <ul class="menu">
+                        <li><a href="home.php">Home</a></li>
+                        <li><a href="transactions.php">Transactions</a></li>
+                        <li><a href="payment.php">Make Payment</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="logout.php">Logout</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="icons">
+                <div class="fas fa-bars" id="menu-btn"></div>
+            </div>
+        </header>
+        <p class="username">Welcome, <span class="color"> <?php echo $user_login_data['user_name']?></span>.</p>
+        <div class="main">
+            <div class="main-left">
+                <p><span class="sp">Full Name:</span>  <?php echo $customer_data['customer_fullname']?></p>
+                <p><span class="sp">Age:</span> <?php echo $customer_data['customer_age']?></p>
+                <p><span class="sp">Email:</span> <?php echo $customer_data['customer_email']?></p>
+                <p><span class="sp">Address:</span> <?php echo $customer_data['customer_address']?></p>
+                <p><span class="sp">Phone Number:</span> <?php echo $customer_data['customer_phone']?></P>
+            </div>
+            <div class="main-right">
+                <div class="frame">
+                    <?php echo '<img src="data:image;base64,'.base64_encode(imageLoader($con)['customer_image']).'" alt="profile-picture">'; ?>
+                    <p><span class="sp">Balance: </span>$<?php echo number_format($customer_data['balance'])?></p>
+                </div>
+            </div>
 
-}
-.icons #menu-btn{
-    display: none;
-}
-.icons #menu-btn:hover{
-    color: lightgreen;
-    transition-duration: 0.21s;
-}
-.icons{
-    cursor: pointer;
-}
-.nav{
-    display: flex;
-    padding: 0 6%;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav.active{
-    right: 0;
-}
-.nav-links{
-    flex: 1;
-    text-align: right;
 
-}
-.nav-links ul li{
-    list-style: none;
-    display: inline-block;
-    padding: 8px 12px;
-    position: relative;
-}
-.nav-links ul li a{
-    color: whitesmoke;
-    text-decoration: none;
-    font-weight: bold;
-}
-.nav-links ul li::after{
-    content: "";
-    width: 0;
-    height: 2px;
-    background-color: lightgreen;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links ul li:hover::after{
-    width: 100%;
-}
-nav .fa{
-    display: none;
-}
 
-.logo{
-    color: whitesmoke;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bold;
-    font-size: 22px;
-    padding: 0 6%;
-}
-.logo a{
-    text-decoration: none;
-    color: whitesmoke;
-}
-.logo a:hover{
-    color: lightgreen;
-}
-.username{
-    margin: 10vh auto;
-    width: 300px;
-    color: whitesmoke;
-    font-size: larger;
-}
-.main{
-    width: 50em;
-    margin: 10vh auto;
-    /*background: darkgray;*/
-    background: transparent;
-    color: whitesmoke;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 20px;
-    border: 0;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-.main-right{
-    border-radius: 20px;
-    padding-right: 0;
+        </div>
+        <div class="cards">
+            <div class="card">
+                <a href="https://nbe.gov.et/inter-bank-daily-foreign-exchange-rate-in-usd/" target="_blank"><img src="world-currency-rates-483658563-09879331c7a94e639775474879c61cf0.png" alt="currency"></a>
+            </div>
+            <div class="card">
+                <a href="https://www.marketwatch.com/" target="_blank"><img src="CollinCamerer-ShortSelling-0.2e16d0ba.fill-1600x810-c100.png" alt="stock market"></a>
+            </div>
+            <div class="card">
+                <a href="" target="_blank"></a><img src="Why-do-you-need-savings-and-investment-plans.png" alt="savings">
+            </div>
+        </div>
+    </div>
 
-}
-.main-right .frame {
-    width: 300px;
-    height: 250px;
-    margin: auto;
-    padding: 15px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background:transparent;
-    border-radius: 20px;
-    border: 0;
-    row-gap: 10px;
-
-}
-.main-right .frame img{
-    width: 55%;
-    height: 80%;
-    border-radius: 20px;
-
-}
-.main-left{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: space-evenly;
-    row-gap: 0.15em;
-    padding-left: 4em;
-}
-.main-left p{
-    font-family: "Open Sans", "Sans Serif Collection", sans-serif;
-    border-bottom: 2px rgba(255,255,255, 10%) solid;
-    margin: 0.2em 0;
-}
-.main-left span, .main-right span{
-    color: lightgreen;
-    ;
-    font-family: Rubik, "Open Sans", "Sans Serif Collection", sans-serif;
-    font-size: larger;
-}
-.cards{
-    display: flex;
-    justify-content: center;
-}
-.card{
-    width: 250px;
-    height: 20vh;
-    background: whitesmoke;
-    margin: 0 10px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0 60px 40px -7px;
-}
-.card img{
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-.card:hover{
-    transform: scale(1.1);
-    transition-duration: 0.7s;
-}
-.username .color{
-    color: lightgreen;
-}
-
-@media (max-width: 898px) {
-    .main {
-        width: 90%;
-        /*background: darkgray;*/
-        flex-direction: column-reverse;
-        padding-bottom: 1em;
-        align-items: center;
-    }
-    .cards{
-        padding-bottom: 10em;
-    }
-    .main-left{
-        padding-left: 0;
-    }
-    .icons #menu-btn{
-        display: inline-block;
-        padding-right: 1em;
-    }
-    header .nav{
-        position: absolute;
-        top: 6.2%;
-        height: calc(100vh);
-        right: -100%;
-        background: linear-gradient(30deg, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-        align-items: flex-start;
+<script>
+    let navbar = document.querySelector('.nav');
+    document.querySelector('#menu-btn').onclick = ()=>{
+        navbar.classList.toggle('active')
 
     }
-    header .nav .nav-links .menu li {
-        display: block;
-        margin: 1.5rem;
-    }
-
-
-
-}
+</script>
+</body>
+</html>
